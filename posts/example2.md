@@ -4,7 +4,7 @@
 
 ## 图片支持
 
-![示例图片](https://via.placeholder.com/600x300)
+![示例图片](https://b0.bdstatic.com/ugc/jsiDRNxzSfNyP64A4FO1LAb46cd9f59963304286f48f929439b070.jpg@h_1280)
 
 ## 表格支持
 
