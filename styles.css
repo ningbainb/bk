@@ -1,0 +1,260 @@
+/* 全局样式 */
+:root {
+    /* 更新配色方案 */
+    --primary-pink: rgba(255, 182, 193, 0.95);    /* 主色调：柔和的粉色 */
+    --secondary-pink: rgba(255, 218, 224, 0.9);   /* 次要色调：更浅的粉色 */
+    --text-primary: rgba(71, 69, 69, 0.9);        /* 主要文字颜色 */
+    --text-secondary: rgba(102, 102, 102, 0.9);   /* 次要文字颜色 */
+    --glass-bg: rgba(255, 255, 255, 0.65);        /* 毛玻璃背景 */
+    --glass-border: rgba(255, 255, 255, 0.4);     /* 毛玻璃边框 */
+    --shadow-color: rgba(255, 192, 203, 0.15);    /* 阴影颜色 */
+    --pink-gradient: linear-gradient(135deg, 
+        rgba(255, 222, 233, 0.7), 
+        rgba(255, 182, 193, 0.4)
+    );
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    background: var(--pink-gradient), url('https://source.unsplash.com/random/1920x1080/?soft,light,pattern') fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* 毛玻璃效果公共类 */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+}
+
+header {
+    background: linear-gradient(135deg, 
+        var(--primary-pink), 
+        var(--secondary-pink)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+header a:hover {
+    opacity: 0.9;
+}
+
+main {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* 文章列表样式 */
+.article-item {
+    background: var(--glass-bg);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.article-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.article-title {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+}
+
+.article-title:hover {
+    color: var(--secondary-pink);
+}
+
+.article-summary {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* 文章详情页样式 */
+article {
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+article h1 {
+    font-size: 2.5rem;
+    color: var(--primary-pink);
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+article h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+}
+
+article p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+article img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+}
+
+/* 代码块样式 */
+article pre {
+    background: rgba(44, 44, 44, 0.7);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+article code {
+    font-family: 'Fira Code', monospace;
+    color: #e5e7eb;
+}
+
+/* 表格样式 */
+article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+article th, article td {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+}
+
+article th {
+    background: rgba(255, 218, 224, 0.3);
+    color: var(--text-primary);
+}
+
+article td {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    background: linear-gradient(180deg, 
+        transparent,
+        var(--glass-bg)
+    );
+    border-top: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 响应式设计 */
+@media (max-width: 640px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .article-item {
+        padding: 1.5rem;
+    }
+
+    .article-title {
+        font-size: 1.5rem;
+    }
+
+    article {
+        padding: 1.5rem;
+    }
+
+    article h1 {
+        font-size: 2rem;
+    }
+
+    article h2 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* 添加平滑过渡效果 */
+* {
+    transition: all 0.3s ease;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-pink);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-pink);
+}
